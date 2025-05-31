@@ -10,5 +10,5 @@
 
   - name: install mongodb server
     ansible.builtin.dnf:
-     name: mangodb-org
-     state: present
+      name: mangodb-org
+      state: present
