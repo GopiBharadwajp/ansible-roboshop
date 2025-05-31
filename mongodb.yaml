@@ -1,6 +1,6 @@
 - name: configration of mongodb
   host: mongodb
-  tsaks:
+  tasks:
   - name: copy mongodb repo
     ansible.builtin.copy:
      src: mongo.repo
