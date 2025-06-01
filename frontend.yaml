@@ -10,14 +10,14 @@
 
   - name: install nginx
     ansible.builtin.dnf:
-       name: nginx
-       sytate: present
+      name: nginx
+      sytate: present
     
   - name: enable and start nginx
     ansible.builtin.service:
-       name: nginx
-       state: started
-       enabled: yes
+      name: nginx
+      state: started
+      enabled: yes
        
   - name: remove the html directory
     ansible.builtin.file:
