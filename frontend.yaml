@@ -37,7 +37,7 @@
   - name: unzip frontend
     ansible.builtin.unarchive:
       src: /tmp/frontend.zip
-      dest: usr/share/nginx/html
+      dest: /usr/share/nginx/html
       remote_src: yes
   
   - name: remove default nginx conf
@@ -50,5 +50,10 @@
     ansible.builtin.copy:
      src: nginx.conf
      dest: /etc/nginx/nginx.conf
+
+  - name: restart again
+    ansible.builtin.service:
+     name: nginx
+     state: restarted
 
     
