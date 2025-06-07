@@ -41,7 +41,7 @@
       chdir: /app
 
   - name: copy shipping  service
-    ansible.builtin.service:
+    ansible.builtin.copy:
       src: shipping.service
       dest: /etc/systemd/system/shipping.service
 
@@ -59,8 +59,17 @@
     ansible.builtin.dnf:
       name: mysql
       state: installed
+
+
+  - name: connect mysql using app user
+    community.mysql.mysql_info:
+      login_user: shipping
+      login_password: RoboShop@1
+      login_host: mysql.gorobo.site
+      login_db: cities
+
   
-  
+
 
 
   
