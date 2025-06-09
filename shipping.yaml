@@ -6,6 +6,7 @@
     ansible.builtin.dnf:
      name: maven
      state: installed
+    loop:
     
   - name: install PyMySQL
     ansible.builtin.pip:
